@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Flash2
     - Flash3
+    - panelScript
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -17,8 +18,13 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Scene1.unity:
@@ -49,17 +55,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9848}
     - Class: 114
+      Script: {instanceID: 9946}
+    - Class: 114
+      Script: {instanceID: 9962}
+    - Class: 114
+      Script: {instanceID: 10130}
+    - Class: 114
       Script: {instanceID: 10214}
+    - Class: 114
+      Script: {instanceID: 10374}
     - Class: 114
       Script: {instanceID: 10548}
     - Class: 114
-      Script: {instanceID: 10930}
+      Script: {instanceID: 10798}
     - Class: 114
-      Script: {instanceID: 11034}
+      Script: {instanceID: 10914}
     - Class: 114
-      Script: {instanceID: 11116}
+      Script: {instanceID: 10932}
     - Class: 114
-      Script: {instanceID: 11376}
+      Script: {instanceID: 11036}
+    - Class: 114
+      Script: {instanceID: 11118}
+    - Class: 114
+      Script: {instanceID: 11378}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -475,6 +493,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 9f54e90afea28775ebea5ef289593867
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: panelScript
+  - hash:
+      serializedVersion: 2
       Hash: 5a578a3e7c0f9ff271b1f3a834ccf6d8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -614,4 +638,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Scene1.unity
-  playerPath: E:/GitHUB/apks/projectF.apk
+  playerPath: C:/Users/cjackson/Documents/GitHub/Project_F/Project_F/FlashR_v8.apk
