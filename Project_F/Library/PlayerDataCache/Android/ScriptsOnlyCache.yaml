@@ -614,4 +614,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Scene1.unity
-  playerPath: C:/Users/cjackson/Documents/GitHub/Project_F/Project_F/FlashR_v5.apk
+  playerPath: E:/GitHUB/apks/projectF.apk
