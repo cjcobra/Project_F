@@ -12,13 +12,23 @@ public class Flash3 : MonoBehaviour
     public float timer;
     public Text textToCopy;
     public Text FlashRText;
-      
+
+    public Slider mainSlider;
+    public string stoppingValue;
+    public string isPlaying;
+
+
     void Start()
     {
-        timer = 0.5f;
+        //    timer = 0.5f;
+        mainSlider.value = 0.5f;
+        timer = mainSlider.value;
 
         // Default                  
         StartCoroutine(ChangeColorToRed());
+
+        stoppingValue = "Play";
+        isPlaying = "Yes";
     }
 
     public void startRed()
@@ -96,6 +106,7 @@ public class Flash3 : MonoBehaviour
     {
         Debug.Log("stopTimer()");
         StopAllCoroutines();
+        isPlaying = "No";
 
         if (colorFlashing == "Red")
         {
@@ -150,7 +161,7 @@ public class Flash3 : MonoBehaviour
         {
             StartCoroutine(ChangeColorToMagenta());
         }
-        timer = 0.5f;
+      //  timer = 0.5f;
     }
 
     public void fasterTimer()
@@ -180,7 +191,7 @@ public class Flash3 : MonoBehaviour
         {
             StartCoroutine(ChangeColorToMagenta());
         }
-        timer = 0.25f;
+      //  timer = 0.25f;
     }
 
     public void fastestTimer()
@@ -210,12 +221,14 @@ public class Flash3 : MonoBehaviour
         {
             StartCoroutine(ChangeColorToMagenta());
         }
-        timer = 0.10f;
+      //  timer = 0.10f;
     }
 
     ///////  RED /////////////
     public IEnumerator ChangeColorToRed()
     {
+        isPlaying = "Yes";
+
         Debug.Log("ChangeColorToRed");
         colorFlashing = "Red";
         FlashRText.text = "FlashR";
@@ -242,6 +255,8 @@ public class Flash3 : MonoBehaviour
     ///////  BLUE /////////////
     public IEnumerator ChangeColorToBlue()
     {
+        isPlaying = "Yes";
+
         colorFlashing = "Blue";
         FlashRText.text = "FlashR";
         FlashRText.color = Color.black;
@@ -266,6 +281,8 @@ public class Flash3 : MonoBehaviour
     ///////  GREEN /////////////
     public IEnumerator ChangeColorToGreen()
     {
+        isPlaying = "Yes";
+
         Debug.Log("ChangeColorToGreen");
         colorFlashing = "Green";
         image.color = Color.green;
@@ -292,6 +309,8 @@ public class Flash3 : MonoBehaviour
     ///////  YELLOW /////////////
     public IEnumerator ChangeColorToYellow()
     {
+        isPlaying = "Yes";
+
         Debug.Log("ChangeColorToYellow");
         colorFlashing = "Yellow";
         image.color = Color.yellow;
@@ -318,6 +337,8 @@ public class Flash3 : MonoBehaviour
     ///////  MAGENTA /////////////
     public IEnumerator ChangeColorToMagenta()
     {
+        isPlaying = "Yes";
+
         Debug.Log("ChangeColorToMagenta");
         colorFlashing = "Magenta";
         image.color = Color.magenta;
@@ -345,7 +366,57 @@ public class Flash3 : MonoBehaviour
     void Update()
     {
 
+        if (mainSlider.value == 1)
+        {
+            stoppingValue = "Stop";
+            stopTimer();
+
+        }
+
+        if (mainSlider.value < 1)
+        {
+            stoppingValue = "Play";
+
+        }
+
+        if (stoppingValue == "Play")
+        {
+            
+            if (isPlaying == "Yes")
+            {
+                timer = mainSlider.value / 2;
+
+            }
+            else
+            {
+                // StopAllCoroutines();
+                if (colorFlashing == "Red")
+                {
+                    StartCoroutine(ChangeColorToRed());
+                }
+                if (colorFlashing == "Blue")
+                {
+                    StartCoroutine(ChangeColorToBlue());
+                }
+                if (colorFlashing == "Yellow")
+                {
+                    StartCoroutine(ChangeColorToYellow());
+                }
+                if (colorFlashing == "Green")
+                {
+                    StartCoroutine(ChangeColorToGreen());
+                }
+                if (colorFlashing == "Magenta")
+                {
+                    StartCoroutine(ChangeColorToMagenta());
+                }
+
+            }
+
+
+            timer = mainSlider.value / 2;
+        }
     }
 
-             
+
 }
